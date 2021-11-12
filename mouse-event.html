@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #click{
+                text-align: center;
+                font-size: 20px;
+            }
+            #doubleClick{
+                text-align: center;
+                font-size: 30px;
+            }
+        </style>
+
+    </head>
+    <body>  
+       <p id="click" onclick="changeColor()">change color click time</p>
+        <script>
+            function changeColor(){
+            document.getElementById("click").style.color="blue";
+            }
+        </script>
+
+
+    
+        <p id="doubleClick" ondblclick="changeColor2">doubleClick change color</p>
+        <script>
+            function changeColor2(){
+                document.getElementById("doubleClick").style.color="yellow";
+
+            }
+               </script>
+               
+
+               <button onmouseover="changeColor3()" id="btn" style="margin-left:600px">mouse over change color</button>
+               <script>
+                   function changeColor3(){
+                       document.getElementById("btn").style.color="pink";
+                   }
+               </script>
+<br><br>
+               <button onmouseover="changeColor4()" id="btn1" onmouseout="reverseColor()" style="margin-left: 600px;">mouse out changeColor</button>
+               <script>
+                   function changeColor4(){
+                       document.getElementById("btn1").style.backgroundColor="yellow";
+                   }
+                   function reverseColor(){
+                       document.getElementById("btn1").style.backgroundColor="pink"
+                   }
+               </script>
+               <br><br>
+
+               <button onmousedown="openPopUp()" id="down" style="margin-left: 600px;">mouse down</button>
+              <div id ="popUp">
+                  <p style="text-align: center; font-size: 20px;">this is  a popup</p>
+              </div>
+              <script>
+                   function openPopUp(){
+                       document.getElementById("popUp").style.color="green";
+
+                   }
+               </script>
+
+               <br>
+               <button onmousedown="openPopUp2()" onmouseup="closePopUp()" id="up" style="margin-left: 600px;">mouse up</button>
+               <div id="popUp1" style="margin-left: 600px;font-size: 20px;">open nd close popup</div>
+               <script>
+                   function openPopUp2(){
+                       document.getElementById("popUp1").style.color="red";
+                   }
+                   function closePopUp(){
+                       document.getElementById("popUp1").style.color="blue";
+                   }
+
+               </script>
+               <br><br>
+
+
+               <button onmousemove="trackMouse()" id="left" style="margin-left: 600px;">Mouse move</button>
+               <script>
+                   function trackMouse(){
+                       var x=event.clientX;
+                       var y=event.clientY;
+
+                       
+                       document.getElementById('left').innerHTML="mousePosition="+x+","+y      ;
+                   }
+                   
+               </script>
+               <br><br>
+               <div onmouseenter="changeColor5()" id="enter" style="height: 50px;width: 100px;margin-left: 600px;border: red 1px solid;">
+            <p>mouse Enter</p></div>
+            <script>
+                function changeColor5(){
+                    document.getElementById("enter").style.backgroundColor="blue";
+
+                }
+            </script>
+            <br><br>
+            <div onmouseenter="colorChange()" onmouseleave="leaveColor()" id="div1" style="height: 50px;width: 100px;margin-left: 600px;border: red 1px solid;">
+                
+            mouse enter&leave</div>
+           
+           <script>
+                function colorChange(){
+                    document.getElementById("div1").style.backgroundColor="yellow";
+                }
+                function leaveColor(){
+                    document.getElementById("div1").style.backgroundColor="pink";
+                }
+            </script>
+
+
+
+
+
+
+    </body>
+</html>
